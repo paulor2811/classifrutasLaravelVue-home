@@ -1,53 +1,57 @@
 # Classifrutas Starter Project
 
-Bem-vindo ao **Classifrutas Starter Project**, uma estrutura inicial para projetos utilizando **Laravel**, **Vue.js**, **PostgreSQL** e **Nginx**, totalmente configurada com **Docker**.
+Welcome to the **Classifrutas Starter Project**, a starter structure for projects using **Laravel**, **Vue.js**, **PostgreSQL**, and **Nginx**, fully configured with **Docker**.
 
 ---
 
-## 📦 Estrutura do Projeto
+## 📦 Project Structure
 
 ```plaintext
-projeto/
-├── etc/                    # Configurações de serviços
-│   ├── nginx/              # Configurações do Nginx
-│   ├── php/                # Configuração do PHP
-│   └── node/               # Configuração do Node.js
-├── web/                    # Código-fonte
+project/
+├── etc/                    # Service configurations
+│   ├── nginx/              # Nginx configurations
+│   ├── php/                # PHP configuration
+│   └── node/               # Node.js configuration
+├── web/                    # Source code
 │   ├── classifrutas.com.br/
-│   │   ├── laravel/        # Backend em Laravel
-│   │   └── vue/            # Frontend em Vue.js
-├── docker-compose.yml      # Configuração do Docker
-└── README.md               # Documentação
+│   │   ├── laravel/        # Backend in Laravel
+│   │   └── vue/            # Frontend in Vue.js
+├── docker-compose.yml      # Docker configuration
+└── README.md               # Documentation
 ```
 
 ---
 
-## 🚀 Tecnologias Utilizadas
+## 🚀 Technologies Used
 
 - **Backend:** Laravel
 - **Frontend:** Vue.js
-- **Banco de Dados:** PostgreSQL
-- **Servidor Web:** Nginx
-- **Gerenciamento de Contêineres:** Docker Compose
+- **Database:** PostgreSQL
+- **Web Server:** Nginx
+- **Container Management:** Docker Compose
 
 ---
 
-## ⚙️ Configuração Inicial
+## ⚙️ Initial Setup
 
-### **Pré-requisitos**
-Certifique-se de ter instalado:
+### **Requirements**
+
+Make sure you have installed:
+
 - Docker
 - Docker Compose
 
-### **Instalação**
+### **Installation**
 
-1. Clone o repositório:
+1. Clone the repository:
+
    ```bash
    git clone https://github.com/jvbhidalgo/LaravelVue.git classifrutas.com.br
    cd classifrutas.com.br
    ```
 
-2. Configure suas variáveis de ambiente no arquivo `.env` (exemplo de um `.env` padrão):
+2. Set environment variables in the `.env` file (example):
+
    ```dotenv
    APP_ENV=local
    APP_DEBUG=true
@@ -59,41 +63,51 @@ Certifique-se de ter instalado:
    DB_PASSWORD=postgres
    ```
 
-3. Inicie o projeto com Docker Compose:
+3. Start the project with Docker Compose:
+
    ```bash
    docker compose up --build
    ```
-   arquivos dockers, nginx, etc. Estão compactados no .zip
+
+   Docker, Nginx, and other files are compressed in the .zip archive.
 
 ---
 
-## 🔧 Como Usar
+## 🔧 How to Use
 
-### Acessos Locais
+### Local Access
+
 - **Frontend Vue.js:** [http://classifrutas.local:88](http://classifrutas.local:88)
 - **API Laravel:** [http://api.classifrutas.local:88](http://api.classifrutas.local:88)
 
-### Comandos Úteis
+### Useful Commands
 
 ```bash
-# Subir os contêineres
+# Start containers
 docker compose up --build
 
-# Parar os contêineres
+# Stop containers
 docker compose down
 
-# Ver logs dos serviços
+# View service logs
 docker compose logs nginx
 ```
 
 ---
 
-## 📂 Estrutura de Pastas e Serviços
+## 📂 Folder Structure and Services
 
-| Serviço   | Caminho                            | Descrição               |
-|-----------|------------------------------------|-------------------------|
-| Laravel   | `web/classifrutas.com.br/laravel` | Backend API             |
-| Vue.js    | `web/classifrutas.com.br/vue`     | Frontend Web            |
-| Nginx     | `etc/nginx`                       | Configurações do Nginx  |
-| PHP-FPM   | `etc/php`                         | Configurações do PHP    |
-| PostgreSQL| Configuração via Docker Compose   | Banco de Dados          |
+| Service    | Path                              | Description          |
+| ---------- | --------------------------------- | -------------------- |
+| Laravel    | `web/classifrutas.com.br/laravel` | Backend API          |
+| Vue.js     | `web/classifrutas.com.br/vue`     | Frontend Web         |
+| Nginx      | `etc/nginx`                       | Nginx configurations |
+| PHP-FPM    | `etc/php`                         | PHP configurations   |
+| PostgreSQL | Configured via Docker Compose     | Database Service     |
+
+---
+
+### 🔷 App.vue
+
+This file contains the main Vue.js application. It is already configured to connect and interact with the Laravel API, demonstrating that the API is working as expected.
+
