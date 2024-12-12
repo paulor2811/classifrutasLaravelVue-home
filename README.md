@@ -43,8 +43,8 @@ Certifique-se de ter instalado:
 
 1. Clone o repositório:
    ```bash
-   git clone https://github.com/seuusuario/classifrutas-starter.git
-   cd classifrutas-starter
+   git clone https://github.com/jvbhidalgo/LaravelVue.git classifrutas.com.br
+   cd classifrutas.com.br
    ```
 
 2. Configure suas variáveis de ambiente no arquivo `.env` (exemplo de um `.env` padrão):
