@@ -20,7 +20,7 @@ project/
 │   │   ├── laravel/        # Backend in Laravel
 │   │   ├── vue/            # Frontend in Vue.js
 │   │   └── README.md       # Project documentation
-├── docker-compose.yml      # Docker configuration
+└── docker-compose.yml      # Docker configuration
 ```
 
 ---
@@ -138,7 +138,7 @@ projeto/
 │   │   ├── laravel/        # Backend em Laravel
 │   │   ├── vue/            # Frontend em Vue.js
 │   │   └── README.md       # Documentação do Projeto
-├── docker-compose.yml      # Configuração do Docker
+└── docker-compose.yml      # Configuração do Docker
 ```
 
 ---
