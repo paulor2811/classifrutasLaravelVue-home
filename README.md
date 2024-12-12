@@ -97,9 +97,3 @@ docker compose logs nginx
 | Nginx     | `etc/nginx`                       | Configurações do Nginx  |
 | PHP-FPM   | `etc/php`                         | Configurações do PHP    |
 | PostgreSQL| Configuração via Docker Compose   | Banco de Dados          |
-
----
-
-## 📝 Licença
-
-Este projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE) para mais detalhes.
