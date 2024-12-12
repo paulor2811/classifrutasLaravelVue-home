@@ -63,6 +63,7 @@ Certifique-se de ter instalado:
    ```bash
    docker compose up --build
    ```
+   arquivos dockers, nginx, etc. Estão compactados no .zip
 
 ---
 
@@ -96,27 +97,6 @@ docker compose logs nginx
 | Nginx     | `etc/nginx`                       | Configurações do Nginx  |
 | PHP-FPM   | `etc/php`                         | Configurações do PHP    |
 | PostgreSQL| Configuração via Docker Compose   | Banco de Dados          |
-
----
-
-## 🤝 Contribuição
-
-Contribuições são bem-vindas! Siga estas etapas para colaborar:
-
-1. Faça um fork do repositório.
-2. Crie uma nova branch:
-   ```bash
-   git checkout -b feature/sua-feature
-   ```
-3. Commit suas alterações:
-   ```bash
-   git commit -m 'Adiciona nova feature'
-   ```
-4. Envie suas mudanças para o repositório remoto:
-   ```bash
-   git push origin feature/sua-feature
-   ```
-5. Abra um Pull Request.
 
 ---
 
