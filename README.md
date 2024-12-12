@@ -15,9 +15,9 @@ project/
 ├── web/                    # Source code
 │   ├── classifrutas.com.br/
 │   │   ├── laravel/        # Backend in Laravel
-│   │   └── vue/            # Frontend in Vue.js
+│   │   ├── vue/            # Frontend in Vue.js
+│   │   └── README.md       # Project documentation
 ├── docker-compose.yml      # Docker configuration
-└── README.md               # Documentation
 ```
 
 ---
@@ -29,6 +29,7 @@ project/
 - **Database:** PostgreSQL
 - **Web Server:** Nginx
 - **Container Management:** Docker Compose
+- **CSS Framework:** Bootstrap 5
 
 ---
 
@@ -110,4 +111,6 @@ docker compose logs nginx
 ### 🔷 App.vue
 
 This file contains the main Vue.js application. It is already configured to connect and interact with the Laravel API, demonstrating that the API is working as expected.
+
+It includes an example API call showing successful communication between the frontend and backend.
 
