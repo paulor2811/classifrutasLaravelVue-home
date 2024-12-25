@@ -58,6 +58,34 @@
       </div>
     </div>
   </section>
+
+  <section>
+    <div class="container d-flex flex-column justify-content-center">
+      <!-- Campo Receber Novidades -->
+      <div class="field checkbox-field">
+        <label class="checkbox-label">
+          <input type="checkbox" v-model="conectado" class="checkbox-input" />
+          aceito receber novidade do classifrutas
+        </label>
+      </div>
+
+      <!-- Campo Aceitar Termos -->
+      <div class="field checkbox-field">
+        <label class="checkbox-label">
+          <input type="checkbox" v-model="conectado" class="checkbox-input" />
+          Estou de acordo com os termos de serviço  e a<br/>
+          política de privacidade do Classifrutas
+        </label>
+      </div>
+
+      <div class="signup-button">
+        <button class="button" @click="handleClick">
+          criar conta
+        </button>
+      </div>
+      <a class="link-signup-text" href="http://classifrutas.local:88/login">já tenho uma conta</a>
+    </div>
+  </section>
 </template>
 
 <script>
@@ -169,6 +197,68 @@ export default {
 
   .container {
     width: 100%; /* Faz o container ocupar 100% da tela em dispositivos muito pequenos */
+  }
+}
+
+.link-text {
+  text-decoration: underline;
+  color: #007BFF; /* Cor azul para parecer um link */
+  cursor: pointer; /* Muda o cursor ao passar o mouse */
+}
+
+.link-text:hover {
+  text-decoration: none; /* Remove o sublinhado ao passar o mouse */
+}
+
+.button {
+  width: 100%; /* Ajusta o botão para 100% da largura do formulário */
+  height: 48px;
+  border-radius: 20px;
+  border: none;
+  background-color: #EE2641;
+  font-family: Arial;
+  font-size: 15px;
+  font-weight: bold;
+  color: white;
+  margin-top: 20px; /* Espaço superior do botão */
+}
+a.link-signup-text {
+  display: block; /* Garante que o link ocupe o espaço do contêiner */
+  width: 100%; /* Faz o link ocupar toda a largura disponível */
+  text-align: center; /* Centraliza o texto do link */
+  color: black;
+  font-weight: bold;
+  font-size: 15px;
+  font-family: Arial;
+}
+/* Responsividade para dispositivos móveis */
+@media (max-width: 768px) {
+  .checkbox-label {
+    font-size: 14px; /* Ajusta o tamanho da fonte para telas menores */
+  }
+
+  .button {
+    font-size: 14px; /* Ajusta o tamanho da fonte do botão */
+    height: 60px; /* Ajusta a altura do botão */
+  }
+
+  .container {
+    padding: 0 10px; /* Menos padding para telas menores */
+  }
+}
+
+@media (max-width: 480px) {
+  .checkbox-label {
+    font-size: 14px; /* Reduz o tamanho da fonte em telas muito pequenas */
+  }
+
+  .button {
+    font-size: 13px; /* Ajusta o tamanho da fonte em telas muito pequenas */
+    height: 50px; /* Ajusta a altura do botão */
+  }
+
+  .container {
+    width: 100%; /* Faz o container ocupar 100% da largura em telas pequenas */
   }
 }
 </style>

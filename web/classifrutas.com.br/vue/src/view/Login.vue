@@ -1,7 +1,7 @@
 <script>
-import BarraSuperior from '../components/Login/BarraSuperior.vue';
+import BarraSuperior from '../components/GeralComponents/Header.vue';
 import PageTitle from "../components/Login/PageTitle.vue";
-import BotaoRegistroAutomatico from '../components/Login/BotaoRegistroAutomatico.vue';
+import BotaoRegistroAutomatico from '../components/Login/LoginOptions.vue';
 export default {
   name: "Login",
   components: {
@@ -18,6 +18,6 @@ export default {
   <BotaoRegistroAutomatico />
 </template>
 
-<style scoped>
+<style src="../GlobalStyles/Login.css">
 
 </style>

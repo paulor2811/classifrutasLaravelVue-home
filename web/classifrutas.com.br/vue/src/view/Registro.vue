@@ -1,26 +1,23 @@
 <template>
-  <BarraSuperior />
+  <Cabecalho />
   <BotaoRegistroAutomatico />
   <Formulario />
-  <ConfirmForm />
 </template>
 
 <script>
-import BarraSuperior from '../components/Register/BarraSuperior.vue';
-import BotaoRegistroAutomatico from '../components/Register/BotaoRegistroAutomatico.vue';
-import Formulario from '../components/Register/Formulario.vue';
-import ConfirmForm from "../components/Register/ConfirmForm.vue";
+import Cabecalho from '../components/GeralComponents/Header.vue';
+import BotaoRegistroAutomatico from '../components/Registro/AuthButtons.vue';
+import Formulario from '../components/Registro/Form.vue';
 export default {
   name: "Registro",
   components: {
-    BarraSuperior,
+    Cabecalho,
     BotaoRegistroAutomatico,
     Formulario,
-    ConfirmForm,
   },
 };
 </script>
 
-<style scoped>
+<style src="../GlobalStyles/Register.css">
 /* Adicione estilos específicos para Registro.vue */
 </style>

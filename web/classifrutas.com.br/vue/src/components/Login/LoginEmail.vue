@@ -10,6 +10,7 @@
               type="text"
               id="id-email"
               class="text-input"
+              placeholder="Digite seu email"
           />
         </div>
       </div>
@@ -56,18 +57,20 @@ export default {
   name: "LoginEmail",
   data() {
     return {
-      email: "", //Armazena o email digitado pelo usuário
+      conectado: false, // Define se o checkbox está marcado ou não
+      email: "", // Armazena o email digitado pelo usuário
     };
   },
   methods: {
-    handleClick() {
-      console.log("Email: ", this.email);
+    signupHandleClick() {
+      console.log("Email:", this.email, "Conectado:", this.conectado);
     },
   },
-}
+};
 </script>
 
 <style scoped>
+/* -------- Estilo do container principal -------- */
 .container {
   height: auto;
   width: 383px;
@@ -75,49 +78,9 @@ export default {
   padding: 0 15px;
 }
 
+/* -------- Estilo dos campos -------- */
 .field {
   margin-bottom: 15px;
-}
-
-.checkbox-field {
-  display: flex;
-  align-items: center;
-}
-
-.checkbox-label {
-  font-size: 14px;
-  line-height: 1.5;
-  font-family: Arial;
-  position: relative;
-}
-
-.checkbox-input {
-  appearance: none;
-  width: 20px;
-  height: 20px;
-  border: 2px solid black;
-  border-radius: 3px;
-  margin-right: 10px;
-  position: relative;
-  cursor: pointer;
-}
-
-.checkbox-input:checked {
-  background-color: #EE2641;
-  border-color: #EE2641;
-}
-
-.checkbox-input:checked::after {
-  content: '';
-  display: block;
-  position: absolute;
-  top: 2px;
-  left: 5px;
-  width: 6px;
-  height: 10px;
-  border: solid white;
-  border-width: 0 3px 3px 0;
-  transform: rotate(45deg);
 }
 
 .label {
@@ -125,6 +88,7 @@ export default {
   font-size: 14px;
   font-weight: bold;
   color: #333;
+  margin-bottom: 10px;
 }
 
 .input-wrapper {
@@ -133,7 +97,7 @@ export default {
   align-items: center;
   border: 1px solid #E2E0E2;
   border-radius: 20px;
-  padding: 2px 2px;
+  padding: 2px 10px; /* Controle do espaçamento interno */
   background-color: #fff;
 }
 
@@ -142,81 +106,62 @@ export default {
   border: none;
   height: 40px;
   font-size: 16px;
-  padding: 1px;
+  padding-left: 5px;
   outline: none;
   border-radius: 20px;
+  font-family: Arial, sans-serif;
 }
 
 .text-input::placeholder {
   color: #999;
 }
 
-/* Responsividade */
-@media (max-width: 768px) {
-  .label {
-    font-size: 12px;
-  }
-
-  .text-input {
-    font-size: 14px;
-  }
-
-  .input-wrapper {
-    padding: 5px;
-  }
-
-  .container {
-    padding: 0 10px;
-  }
-
-  .field {
-    margin-bottom: 10px;
-  }
-}
-
-@media (max-width: 480px) {
-  .label {
-    font-size: 14px;
-  }
-
-  .text-input {
-    font-size: 12px;
-  }
-
-  .input-wrapper {
-    padding: 5px;
-  }
-
-  .container {
-    width: 100%;
-  }
-}
-
+/* -------- Estilo do botão -------- */
 .button {
   width: 100%;
   height: 48px;
   border-radius: 20px;
   border: none;
   background-color: #EE2641;
-  font-family: Arial;
+  font-family: Arial, sans-serif;
   font-size: 15px;
   font-weight: bold;
   color: white;
-  margin-top: -10px;
 }
 
+/* -------- Esqueceu a senha -------- */
 .link-container {
   display: flex; /* Torna o container flexível */
   justify-content: center; /* Centraliza horizontalmente */
   align-items: center; /* Centraliza verticalmente */
-  margin-bottom: 60px;
+  margin: 20px 0;
 }
 
 a {
   color: #EE2641;
-  font-family: Arial;
-  font-size: 15px;
-  text-decoration: none;
+  font-family: Arial, sans-serif;
+  font-size: 14px;
   font-weight: bold;
+  text-decoration: none;
+}
+
+/* -------- Responsividade -------- */
+@media (max-width: 768px) {
+  .label {
+    font-size: 12px;
+  }
+  .text-input {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    width: 100%;
+  }
+
+  .text-input {
+    font-size: 13px;
+  }
 }
 </style>
