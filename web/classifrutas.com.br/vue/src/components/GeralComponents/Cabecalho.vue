@@ -31,25 +31,24 @@ export default {
   justify-content: center;
   align-items: center;
   width: 100%; /* Garante que o contêiner ocupe toda a largura */
-  border-bottom: 1px solid #E2E0E2; /* Linha na parte inferior do container */
+  border-bottom: 2px solid #E2E0E2; /* Linha na parte inferior do container */
   margin-left: -40px;
 }
 
 .container-botao-voltar {
   position: relative;
-  right: 200px;
+  right: 700px;
 }
 
 .imagem-botao-voltar {
-  margin-top: 30px;
   width: 20px; /* Ajuste o tamanho da imagem se necessário */
 }
 
 .imagem-logo {
   height: auto;
-  width: 200px;
-  margin-top: 20px;
-  margin-bottom: 20px;
+  width: 180px;
+  bottom: 10px;
+  position: relative;
 }
 
 /* Estilo para o botão invisível */

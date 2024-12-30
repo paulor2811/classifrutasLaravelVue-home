@@ -1,4 +1,6 @@
 <template>
+  <Cabecalho />
+  <AuthButtons />
   <section>
     <div class="container d-flex flex-column justify-content-center">
       <!-- Campo Nome -->
@@ -8,7 +10,7 @@
           <input
               type="text"
               id="id-name"
-              v-model="username"
+              v-model="formData.nome"
               class="text-input"
           />
         </div>
@@ -21,11 +23,12 @@
           <input
               type="text"
               id="id-phone"
+              v-model="formData.celular"
               class="text-input"
               placeholder="de preferência o WhatsApp"
           />
           <img
-              src="../../assets/site-assets/whatsapp-icon.png"
+              src="../../../assets/site-assets/whatsapp-icon.png"
               alt="WhatsApp Icon"
               class="input-icon"
           />
@@ -39,6 +42,7 @@
           <input
               type="text"
               id="id-email"
+              v-model="formData.email"
               class="text-input"
           />
         </div>
@@ -51,8 +55,9 @@
           <input
               type="password"
               id="id-pwd"
+              v-model="formData.password"
               class="text-input"
-              placeholder="no mínimo 6 caracteres"
+              placeholder="no mínimo 8 caracteres"
           />
         </div>
       </div>
@@ -79,7 +84,7 @@
       </div>
 
       <div class="signup-button">
-        <button class="button" @click="handleClick">
+        <button class="button" @click="submitForm">
           criar conta
         </button>
       </div>
@@ -89,12 +94,76 @@
 </template>
 
 <script>
+import Cabecalho from '../../GeralComponents/Cabecalho.vue';
+import AuthButtons from '../../GeralComponents/AuthButtons.vue';
 export default {
-  name: "Formulario",
+  name: "PageForm",
+  components: {
+    Cabecalho,
+    AuthButtons,
+  },
   data() {
     return {
-      username: '', // Variável para armazenar o valor do campo nome de usuário
+      formData: {
+        tipo_usuario_id: 1, // Exemplo: valor fixo ou dinâmico
+        tipo_anunciante_id: 2, // Campo opcional
+        uuid: this.generateUUID(), // Gere um UUID
+        nome: "", // Input do nome completo
+        nome_fantasia: "nome",
+        email: "", // Input do email
+        password: "", // Input da senha
+        grupo_usuario_id: 1, // Exemplo: valor fixo ou dinâmico
+        grupo_nome: "Default Group", // Nome do grupo
+        is_adm: true, // Defina o valor padrão
+      },
     };
+  },
+  methods: {
+    generateUUID() {
+      return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function (c) {
+        const r = (Math.random() * 16) | 0,
+            v = c === 'x' ? r : (r & 0x3) | 0x8;
+        return v.toString(16);
+      });
+    },
+    async submitForm() {
+      try {
+        const response = await fetch("http://api.classifrutas.local:88/api/register-user", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(this.formData),
+        });
+
+        // Log da resposta para ver o conteúdo
+        const responseText = await response.text();  // Obtém a resposta como texto
+        console.log("Resposta do servidor:", responseText);
+
+        // Se a resposta não for OK, apenas mostre o erro
+        if (!response.ok) {
+          console.error("Erro ao enviar o formulário:", responseText);
+          return;
+        }
+
+        // Se for uma resposta válida JSON, faça o parse
+        let data;
+        try {
+          data = JSON.parse(responseText);  // Tentando parse manual
+        } catch (error) {
+          console.error("Erro ao parsear JSON:", error);
+          return;
+        }
+
+        // Processar dados se o JSON for válido
+        if (data) {
+          console.log("Resposta do servidor (JSON):", data);
+        }
+      } catch (error) {
+        console.error("Erro ao enviar o formulário:", error.message);
+      }
+    }
+
   },
 };
 </script>
@@ -198,16 +267,6 @@ export default {
   .container {
     width: 100%; /* Faz o container ocupar 100% da tela em dispositivos muito pequenos */
   }
-}
-
-.link-text {
-  text-decoration: underline;
-  color: #007BFF; /* Cor azul para parecer um link */
-  cursor: pointer; /* Muda o cursor ao passar o mouse */
-}
-
-.link-text:hover {
-  text-decoration: none; /* Remove o sublinhado ao passar o mouse */
 }
 
 .button {

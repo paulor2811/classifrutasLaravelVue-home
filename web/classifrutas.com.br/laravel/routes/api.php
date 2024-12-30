@@ -1,13 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use Illuminate\Support\Facades\Log;
+use App\Http\Controllers\UserRegisterController;
 
+Route::post('/register-user', [UserRegisterController::class, 'storeUser']);
+Route::post('/register-login', [UserRegisterController::class, 'storeLogin']);
+Route::post('/register-grupo', [UserRegisterController::class, 'storeGrupo']);
 
-Route::get('/hello', function () {
-    return ['message' => 'Hello, World!'];
-});
-
-Route::get('/log-test', function () {
-    return ['message' => 'Log Teste!'];
-});

@@ -13,7 +13,7 @@
         </div>
         <div class="google-button mb-3">
           <button class="button" @click="handleClick">
-            <img src="../../assets/site-assets/google-icon.png" alt="Facebook" class="google-icon me-2" />
+            <img src="../../assets/site-assets/google-icon.png" alt="Google" class="google-icon me-2" />
             continuar com o google
           </button>
         </div>
